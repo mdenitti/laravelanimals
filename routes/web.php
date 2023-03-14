@@ -52,3 +52,4 @@ Route::get('/animaldetail/{name}',[AnimalController::class, 'show']);
 Route::get('/user/{id}', [UsersController::class, 'show']);
 
 Route::get('/aliens',[UfoController::class, 'show']);
+Route::get('/aliens/{id}',[UfoController::class, 'showAlien']);

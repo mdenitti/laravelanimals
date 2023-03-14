@@ -14,4 +14,16 @@ class UfoController extends Controller
         //dd($aliens);
         return view('aliens.home', compact('aliens'));
     }
+
+    public function showAlien ($id) {
+        /* $alien = Alien::find($id);
+        if (!$alien) {
+            abort(404);
+        } */
+
+        $alien = Alien::where('id', $id)->firstOrFail();
+        
+
+        return view('aliens.details', compact('alien'));
+    }
 }
