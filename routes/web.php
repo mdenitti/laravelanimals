@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UfoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +48,7 @@ route::get('/animals/{id}',function($id){
 
 Route::get('/animaldetail/{name}',[AnimalController::class, 'show']);
 
-// OLD METHOD! Route::get('/users', UsersController@index);
+// OLD METHOD! Route::get('/users', UsersController@show);
 Route::get('/user/{id}', [UsersController::class, 'show']);
+
+Route::get('/aliens',[UfoController::class, 'show']);
