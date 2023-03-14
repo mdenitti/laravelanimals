@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,8 @@ route::get('/animals/{id}',function($id){
     $id = decrypt($id);
     return "my id is $id";
 });
+
+Route::get('/animaldetail/{name}',[AnimalController::class, 'show']);
+
+// OLD METHOD! Route::get('/users', UsersController@index);
+Route::get('/user/{id}', [UsersController::class, 'show']);
