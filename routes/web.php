@@ -35,3 +35,9 @@ Route::get('/animals', function () {
 
 /* Opdracht: Geef een assiocatieve array mee aan de view. Gebruik de compact functie. Gebruik de view animals.home.
 en itereer over de array in de view. */
+
+route::get('/animals/{id}',function($id){
+    // encrypt the id
+    $id = decrypt($id);
+    return "my id is $id";
+});
