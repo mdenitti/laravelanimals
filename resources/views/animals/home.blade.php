@@ -3,14 +3,21 @@ dd($animals);
 
 @endphp --}}
 
-@foreach ($animals as $animal)
-    {{$animal}}<hr>
-@endforeach
+@extends('layout')
+@section('content')
+    @foreach ($animals as $animal)
+        {{$animal}}<hr>
+    @endforeach
 
-@foreach ($foods as $food)
-    {{$food}}<hr>
-@endforeach
+    @foreach ($foods as $food)
+        {{$food}}<hr>
+    @endforeach
 
-@foreach ($breeds as $key => $breed)
-    {{$key}} => {{$breed}}
-@endforeach
+    @foreach ($breeds as $key => $breed)
+        {{$key}} => {{$breed}}
+    @endforeach
+@endsection
+
+@section('title')
+    <h3>The Animals are already here... and in the zoo</h3>
+@endsection
