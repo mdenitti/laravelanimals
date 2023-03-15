@@ -13,7 +13,7 @@
   <body>
     <div class="container mt-3">
       <div class="row justify-content-center align-items-center g-2">
-        <div class="col-md-2">LOGO</div>
+        <div class="col-md-2">ADMIN</div>
         <div class="col-md-10">@include('navigation')</div>
       </div>
       <div class="row justify-content-center align-items-start g-2 mt-3">

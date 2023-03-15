@@ -3,7 +3,7 @@ dd($animals);
 
 @endphp --}}
 
-@extends('layout')
+@extends('layoutadmin')
 @section('content')
     @foreach ($animals as $animal)
         {{$animal}}<hr>

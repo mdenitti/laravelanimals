@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Alien;
+use App\Models\User;
 
 class UfoController extends Controller
 {
     public function show() {
         //$aliens = DB::table('aliens')->get();
         $aliens = Alien::all();
+        $user = User::find(1);
         //dd($aliens);
-        return view('aliens.home', compact('aliens'));
+        return view('aliens.home', compact('aliens','user'));
     }
 
     public function showAlien ($id) {
