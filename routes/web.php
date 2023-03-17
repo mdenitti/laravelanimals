@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UfoController;
-
+use Illuminate\Http\Request;
+use App\Models\Playground;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,15 @@ use App\Http\Controllers\UfoController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::post('/ufo',function(Request $request){
+    $playground = new Playground();
+    $playground->name = $request->name;
+    $playground->message = $request->message;
+    $playground->save();
+
+    return view ('welcome', ['name' => $request->name]);
 });
 
 /* Route::get('/animals', function () {
