@@ -1,5 +1,2 @@
-<div class="container">
-    <div class="row">
-        <div class="col">This is my footer</div>
-    </div>
-</div>
+<b>© SyntraPXL</b> - {{date('Y')}} - {{date('Y')+1}} - FullStack Developers
+

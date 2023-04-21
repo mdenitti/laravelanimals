@@ -61,5 +61,28 @@ Route::get('/animaldetail/{name}',[AnimalController::class, 'show']);
 // OLD METHOD! Route::get('/users', UsersController@show);
 Route::get('/user/{id}', [UsersController::class, 'show']);
 
-Route::get('/aliens',[UfoController::class, 'show']);
+Route::get('/aliens',[UfoController::class, 'show'])->name('aliens');
 Route::get('/aliens/{id}',[UfoController::class, 'showAlien']);
+
+
+// create routes based on the navigation
+
+// HOME routes
+Route::get('/', function () {
+    return view('welcome.home');
+})->name('home');
+
+// ABOUT routes
+Route::get('/about', function () {
+    return view('about.home');
+})->name('about');
+
+// BLOG routes
+Route::get('/blog', function () {
+    return view('blog.home');
+})->name('blog');
+
+// CONTACT routes
+Route::get('/contact', function () {
+    return view('contact.home');
+})->name('contact');
