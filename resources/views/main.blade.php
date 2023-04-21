@@ -70,7 +70,8 @@
                                         <p class="mb-1 pt-2 text-bold">@yield('title')</p>
                                         <h5 class="font-weight-bolder">@yield('subtitle')</h5>
                                         <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.
-                                        @yield('userinfo')
+                                          @yield('content')
+                                          @yield('userinfo')
                                         </p>
                                         <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
                                             Read More
@@ -89,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    @yield('content')
+                    
                 </div>
             </div>
         </div>
