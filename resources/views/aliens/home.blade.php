@@ -64,6 +64,7 @@
 
   
                                     </tbody>
+                                    <tr> {{ $aliens->links() }} </tr>
                                 </table>
                             </div>
                         </div>
