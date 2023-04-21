@@ -26,6 +26,9 @@ Route::post('/ufo',function(Request $request){
     $playground = new Playground();
     $playground->name = $request->name;
     $playground->message = $request->message;
+    $playground->email = $request->email;
+    $playground->location = $request->location;
+    $playground->scary = $request->scary;
     $playground->save();
 
     return view ('welcome', ['name' => $request->name]);

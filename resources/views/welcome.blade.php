@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('main')
+
 @section('content')
     <h1>Ufo Sightings</h1>
     <p>Here are the latest UFO sightings</p>
