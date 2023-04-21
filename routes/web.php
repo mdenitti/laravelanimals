@@ -28,6 +28,8 @@ Route::post('/ufo',function(Request $request){
     $playground->message = $request->message;
     $playground->email = $request->email;
     $playground->location = $request->location;
+    if ($request->scary = true) {$request->scary = 1;}
+    else {$request->scary = 0;}
     $playground->scary = $request->scary;
     $playground->save();
 
