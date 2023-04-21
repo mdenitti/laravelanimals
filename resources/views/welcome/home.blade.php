@@ -27,6 +27,15 @@
                         <div class="form-group">
                             <input class="form-control" type="text" name="location" placeholder="Location">
                         </div>
+
+                        <div class="form-group">
+                           <select class="form-control" name="country">
+                                @foreach ($countries as $country)
+                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                @endforeach
+                           </select>
+                        </div>
+
                         <div class="form-group">
                             <input class="form-control" type="date" name="date" placeholder="Date">
                         </div>
