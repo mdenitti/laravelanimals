@@ -23,6 +23,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/testrelation', function () {
+   // get the aliens that have a country assigned to them
+    $aliens = Alien::whereHas('country')->get();
+    
+   // get the aliens that have no county
+    $aliens = Alien::whereDoesntHave('country')->get();
+    
+   // get all the aliens wich have a country and load them eager
+    $aliens = Alien::with('country')->find(13);
+    return $aliens->country->name;
+});
+
 Route::post('/ufo',function(Request $request){
     $playground = new Playground();
     $playground->name = $request->name;
@@ -70,13 +82,14 @@ Route::get('/aliens/{id}',[UfoController::class, 'showAlien']);
 
 // HOME routes
 Route::get('/', function () {
-    return view('welcome.home');
+    $countries = App\Models\Country::all();
+    return view('welcome.home', compact('countries'));
 })->name('home');
 
 Route::post('/process', function (Request $request) {
       // Validate the form data
       dd($request);
-      
+
 }
 );
 
