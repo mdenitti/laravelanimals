@@ -7,3 +7,10 @@ a.relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-700.
 span.relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5.rounded-md {
     display: none;
 }
+
+span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5 {
+    background-color: #e6078e!important;
+    margin-left: 0px;
+    margin-right: -5px;
+    color: white;
+}
