@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UfoController;
 use Illuminate\Http\Request;
 use App\Models\Playground;
+use App\Models\Alien;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,6 +72,13 @@ Route::get('/aliens/{id}',[UfoController::class, 'showAlien']);
 Route::get('/', function () {
     return view('welcome.home');
 })->name('home');
+
+Route::post('/process', function (Request $request) {
+      // Validate the form data
+      dd($request);
+      
+}
+);
 
 // ABOUT routes
 Route::get('/about', function () {

@@ -14,3 +14,9 @@ span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text
     margin-right: -5px;
     color: white;
 }
+
+.fadeh2 {
+    background: linear-gradient(to right, #e6078e, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
