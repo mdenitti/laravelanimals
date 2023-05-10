@@ -88,8 +88,26 @@ Route::get('/', function () {
 
 Route::post('/process', function (Request $request) {
       // Validate the form data
-      dd($request);
+      
+        $validation = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+            'location' => 'required',
+            'country_id' => 'required',
+            'date' => 'required|date',
+            'time' => 'required'
+        ]);
 
+        // use the create facade to create a new alien
+        $alien = Alien::create($validation);
+        // redirect to the aliens page with a success message (session/flash)
+
+        /* session()->flash('message', 'Request has been received!, and will be moderated soon... we will keep in touch! Thank you!'); */
+        
+        return redirect()->route('home')->with('message', 'Request has been received!, and will be moderated soon... we will keep in touch! Thank you!');
+        
+        
 }
 );
 

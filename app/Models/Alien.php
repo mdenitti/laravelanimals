@@ -10,6 +10,10 @@ class Alien extends Model
 {
     use HasFactory;
 
+    // make Alien mass assignable using guarded only if we use the create facade
+    protected $guarded = [];
+    // or fillable if we use the create method
+
     // make a relation with my country
     // the function is public
     // the function is called country (model name but no capital letter)

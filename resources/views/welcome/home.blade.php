@@ -7,6 +7,13 @@
 
 <div class="row">
     <div class="col-md-6">
+    
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+         @endif
+
       <h1 class='fadeh2'>Alien Online Hotline</h1>
       <h4>Are you someone who has witnessed a UFO sighting or an encounter with extraterrestrial beings? Or are you simply curious about the existence of UFOs and the possibility of intelligent life beyond our planet?</h4>
       <p>Our hotline is a place for individuals like you to share your experiences, seek support, and connect with others who have had similar encounters. Our team of experts is dedicated to providing a safe and confidential space for you to discuss your encounters with UFOs and alien life.</p>
@@ -29,7 +36,7 @@
                         </div>
 
                         <div class="form-group">
-                           <select class="form-control" name="country">
+                           <select class="form-control" name="country_id">
                                 @foreach ($countries as $country)
                                     <option value="{{$country->id}}">{{$country->name}}</option>
                                 @endforeach
