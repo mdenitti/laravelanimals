@@ -8,6 +8,7 @@ use App\Http\Controllers\UfoController;
 use Illuminate\Http\Request;
 use App\Models\Playground;
 use App\Models\Alien;
+use App\Mail\InformAlien;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,14 +97,32 @@ Route::post('/process', function (Request $request) {
             'location' => 'required',
             'country_id' => 'required',
             'date' => 'required|date',
-            'time' => 'required'
+            'time' => 'required',
+            'approved' => 'required|numeric|in:0'
         ]);
 
         // use the create facade to create a new alien
         $alien = Alien::create($validation);
         // redirect to the aliens page with a success message (session/flash)
 
+        // alterntive way to create a new alien without using the create facade
+        // con's no validation and no mass assignment 
+        // pro's no tweak of the model needed
+        /* $alien = new Alien();
+        $alien->name = $request->name;
+        $alien->email = $request->email;
+        $alien->message = $request->message;
+        $alien->location = $request->location;
+        $alien->country_id = $request->country_id;
+        $alien->date = $request->date;
+        $alien->time = $request->time;
+        $alien->approved = 0;
+        $alien->save();
+ */
         /* session()->flash('message', 'Request has been received!, and will be moderated soon... we will keep in touch! Thank you!'); */
+
+        // send an email to the alien submitter with the data
+        \Mail::to($alien->email)->send(new InformAlien($alien));
         
         return redirect()->route('home')->with('message', 'Request has been received!, and will be moderated soon... we will keep in touch! Thank you!');
         

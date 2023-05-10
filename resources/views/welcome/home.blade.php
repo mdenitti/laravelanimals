@@ -27,6 +27,7 @@
                         @csrf
                         <div class="form-group">
                             <input class="form-control" type="text" name="name" placeholder="Name">
+                            <input type="hidden" name="approved" value="0">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" placeholder="Email" required>
