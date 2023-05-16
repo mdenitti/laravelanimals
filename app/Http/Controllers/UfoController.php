@@ -11,7 +11,7 @@ class UfoController extends Controller
 {
     public function show() {
         //$aliens = DB::table('aliens')->get();
-        $aliens = Alien::paginate(2);
+        $aliens = Alien::paginate(5);
         $user = User::find(1);
         //dd($aliens);
         return view('aliens.home', compact('aliens','user'));

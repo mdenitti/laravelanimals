@@ -144,3 +144,7 @@ Route::get('/blog', function () {
 Route::get('/contact', function () {
     return view('contact.home');
 })->name('contact');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
